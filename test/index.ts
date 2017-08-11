@@ -71,17 +71,18 @@ test('start() should create a client with an host', async (t) => {
 	t.truthy(client)
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 2)
-	t.true(stdout[0].includes('Connecting to'))
-	t.true(stdout[1].includes('Connected to'))
+	t.true(stdout[0].includes('Connecting to localhost:9200'))
+	t.true(stdout[1].includes('Connected to localhost:9200'))
 })
 
-test('start() should create a client with an array of hosts', async (t) => {
+test('start() should create a client with an array of hosts (string[])', async (t) => {
 	stdMock.use()
 	const ctx = {
 		conf: {
 			elasticsearch: {
 				hosts: [
-					'localhost:9200'
+					'localhost:9200',
+					'localhost:9201'
 				]
 			}
 		},
@@ -96,7 +97,40 @@ test('start() should create a client with an array of hosts', async (t) => {
 	t.truthy(client)
 	t.is(stderr.length, 0)
 	t.is(stdout.length, 2)
-	t.true(stdout[0].includes('Connecting to'))
-	t.true(stdout[1].includes('Connected to'))
+	t.true(stdout[0].includes('Connecting to localhost:9200, localhost:9201'))
+	t.true(stdout[1].includes('Connected to localhost:9200, localhost:9201'))
 })
 
+test('start() should create a client with an array of hosts (object[])', async (t) => {
+	stdMock.use()
+	const ctx = {
+		conf: {
+			elasticsearch: {
+				hosts: [
+					{
+						protocol: 'http',
+						host: 'localhost',
+						port: 9200
+					},
+					{
+						protocol: 'http',
+						host: 'localhost',
+						port: 9201
+					}
+				]
+			}
+		},
+		log: {
+			module: () => ctx.log,
+			info: console.log
+		}
+	}
+	await start.call(ctx)
+	stdMock.restore()
+	const { stdout, stderr } = stdMock.flush()
+	t.truthy(client)
+	t.is(stderr.length, 0)
+	t.is(stdout.length, 2)
+	t.true(stdout[0].includes('Connecting to localhost:9200, localhost:9201'))
+	t.true(stdout[1].includes('Connected to localhost:9200, localhost:9201'))
+})
