@@ -1,0 +1,55 @@
+{
+  "name": "@terrajs/mono-elasticsearch",
+  "version": "1.0.0",
+  "description": "ElasticSearch module for Mono",
+  "main": "dist/src/",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "rimraf dist/ && tsc",
+    "lint": "tslint src/*.ts",
+    "test": "npm run lint && npm run build && nyc ava --verbose --serial dist/test/ && nyc report --reporter=html",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "preversion": "npm test",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrajs/mono-elasticsearch.git"
+  },
+  "nyc": {
+    "include": [
+      "dist/src/"
+    ]
+  },
+  "contributors": [
+    {
+      "name": "Sebastien Chopin (@Atinux)"
+    },
+    {
+      "name": "Benjamin Canac (@benjamincanac)"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@types/elasticsearch": "^5.0.14",
+    "elasticsearch": "^13.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.20",
+    "ava": "^0.21.0",
+    "codecov": "^2.3.0",
+    "nyc": "^11.1.0",
+    "rimraf": "^2.6.1",
+    "std-mocks": "^1.0.1",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2"
+  },
+  "keywords": [
+    "elasticsearch",
+    "mono",
+    "mono-elasticsearch"
+  ]
+}
