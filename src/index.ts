@@ -13,9 +13,9 @@ export default async function () {
 
 	let hostName: string = ''
 	if (elasticsearch.host) hostName = elasticsearch.host
-	else if (elasticsearch.hosts) {
+	if (elasticsearch.hosts) {
 		hostName = elasticsearch.hosts.map((host) => {
-			return (typeof host === 'string') ? host : `${host.protocol}://${host.host}:${host.port}`
+			return (typeof host === 'string') ? host : `${host.host}:${host.port}`
 		}).join(', ')
 	}
 
