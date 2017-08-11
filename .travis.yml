@@ -9,4 +9,4 @@ script:
   - yarn run test
 after_success:
   - yarn run coverage
-services: mongodb
+services: elasticsearch
