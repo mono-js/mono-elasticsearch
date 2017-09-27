@@ -54,10 +54,3 @@ client.ping({
   }
 });
 ```
-
-With [TypeScript](https://github.com/Microsoft/TypeScript):
-
-```ts
-import { client } from '@terrajs/mono-elasticsearch'
-```
-
