@@ -1,6 +1,6 @@
-# mono-elasticsearch
+<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/31045494-877e7d44-a5e5-11e7-8799-e3f73ed5ea20.png" width="350" alt="Mono Doc"/></h1>
 
-ElasticSearch module for [Mono](https://github.com/terrajs/mono).
+> ElasticSearch module for [Mono](https://github.com/terrajs/mono)
 
 [![npm version](https://img.shields.io/npm/v/@terrajs/mono-elasticsearch.svg)](https://www.npmjs.com/package/@terrajs/mono-elasticsearch)
 [![Travis](https://img.shields.io/travis/terrajs/mono-elasticsearch/master.svg)](https://travis-ci.org/terrajs/mono-elasticsearch)
