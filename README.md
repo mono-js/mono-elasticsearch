@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/31045494-877e7d44-a5e5-11e7-8799-e3f73ed5ea20.png" width="350" alt="Mono Doc"/></h1>
+<h1 align="center"><img src="https://user-images.githubusercontent.com/904724/31045677-26278654-a5e9-11e7-8acf-e63c394d04fc.png" width="350" alt="Mono ElasticSearch"/></h1>
 
 > ElasticSearch module for [Mono](https://github.com/terrajs/mono)
 
