@@ -18,7 +18,7 @@ test('client should be undefined when connection not opened', (t) => {
 test('start() should log an error if no elasticsearch conf defined', async (t) => {
 	stdMocks.use()
 	const ctx = {
-		conf: {},
+		conf: { mono: {} },
 		log: {
 			module: () => ctx.log,
 			error: console.error
@@ -37,7 +37,9 @@ test('start() should log an error if no elasticsearch conf hosts defined', async
 	stdMocks.use()
 	const ctx = {
 		conf: {
-			elasticsearch: {}
+			mono: {
+				elasticsearch: {}
+			}
 		},
 		log: {
 			module: () => ctx.log,
@@ -57,8 +59,10 @@ test('start() should create a client with an host', async (t) => {
 	stdMocks.use()
 	const ctx = {
 		conf: {
-			elasticsearch: {
-				host: 'localhost:9200'
+			mono: {
+				elasticsearch: {
+					host: 'localhost:9200'
+				}
 			}
 		},
 		log: {
@@ -80,11 +84,13 @@ test('start() should create a client with an array of hosts (string[])', async (
 	stdMocks.use()
 	const ctx = {
 		conf: {
-			elasticsearch: {
-				hosts: [
-					'localhost:9200',
-					'localhost:9201'
-				]
+			mono: {
+				elasticsearch: {
+					hosts: [
+						'localhost:9200',
+						'localhost:9201'
+					]
+				}
 			}
 		},
 		log: {
@@ -106,19 +112,21 @@ test('start() should create a client with an array of hosts (object[])', async (
 	stdMocks.use()
 	const ctx = {
 		conf: {
-			elasticsearch: {
-				hosts: [
-					{
-						protocol: 'http',
-						host: 'localhost',
-						port: 9200
-					},
-					{
-						protocol: 'http',
-						host: 'localhost',
-						port: 9201
-					}
-				]
+			mono: {
+				elasticsearch: {
+					hosts: [
+						{
+							protocol: 'http',
+							host: 'localhost',
+							port: 9200
+						},
+						{
+							protocol: 'http',
+							host: 'localhost',
+							port: 9201
+						}
+					]
+				}
 			}
 		},
 		log: {

@@ -29,9 +29,11 @@ Mono-elasticsearch will use the `elasticsearch` property of your configuration (
 
 ```js
 module.exports = {
-  elasticsearch: {
-    // See https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/configuration.html
-    host: 'localhost:9200'
+  mono: {
+    elasticsearch: {
+      // See https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/configuration.html
+      host: 'localhost:9200'
+    }
   }
 }
 ```
