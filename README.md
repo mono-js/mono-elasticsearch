@@ -2,7 +2,7 @@
 
 > ElasticSearch module for [Mono](https://github.com/terrajs/mono)
 
-[![npm version](https://img.shields.io/npm/v/@terrajs/mono-elasticsearch.svg)](https://www.npmjs.com/package/@terrajs/mono-elasticsearch)
+[![npm version](https://img.shields.io/npm/v/mono-elasticsearch.svg)](https://www.npmjs.com/package/mono-elasticsearch)
 [![Travis](https://img.shields.io/travis/terrajs/mono-elasticsearch/master.svg)](https://travis-ci.org/terrajs/mono-elasticsearch)
 [![Coverage](https://img.shields.io/codecov/c/github/terrajs/mono-elasticsearch/master.svg)](https://codecov.io/gh/terrajs/mono-elasticsearch.js)
 [![license](https://img.shields.io/github/license/terrajs/mono-elasticsearch.svg)](https://github.com/terrajs/mono-elasticsearch/blob/master/LICENSE)
@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-npm install --save @terrajs/mono-elasticsearch
+npm install --save mono-elasticsearch
 ```
 
 Then, in your configuration file of your Mono application (example: `conf/application.js`):
@@ -18,7 +18,7 @@ Then, in your configuration file of your Mono application (example: `conf/applic
 ```js
 module.exports = {
   mono: {
-    modules: ['@terrajs/mono-elasticsearch']
+    modules: ['mono-elasticsearch']
   }
 }
 ```
@@ -43,7 +43,7 @@ module.exports = {
 In your modules files, you can access `client` instance like this:
 
 ```js
-const { client } = require('@terrajs/mono-elasticsearch')
+const { client } = require('mono-elasticsearch')
 
 client.ping({
   // ping usually has a 3000ms timeout
