@@ -1,6 +1,6 @@
 {
   "name": "mono-elasticsearch",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "ElasticSearch module for Mono",
   "main": "lib/",
   "files": [
