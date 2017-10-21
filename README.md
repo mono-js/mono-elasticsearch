@@ -56,3 +56,16 @@ client.ping({
   }
 });
 ```
+
+## Utils
+
+```js
+const { SearchValidation, getSearchOptions } = require('mono-elasticsearch')
+```
+
+- `searchValidation: Object`: Joi object used for route validation inside Mono
+- `getSearchOptions(req.query): Object`: Method to transform `req.query` into a usable object for elasticsearch `find`
+
+The last 2 methods are useful to create easily listing routes with pagination restriction
+
+You can see an example of how to use it in `test/fixtures/utils/src/utils.routes.js`.
