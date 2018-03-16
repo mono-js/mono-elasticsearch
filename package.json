@@ -42,7 +42,7 @@
     "@terrajs/mono": "0.9.1",
     "ava": "0.22.0",
     "codecov": "2.3.1",
-    "eslint": "4.9.0",
+    "eslint": "4.19.0",
     "nyc": "11.2.1",
     "rimraf": "2.6.2",
     "std-mocks": "1.0.1"
