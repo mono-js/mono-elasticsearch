@@ -7,7 +7,7 @@ module.exports = {
 		],
 		elasticsearch: {
 			host: 'localhost:9200',
-			searchdLimitMax: 20,
+			searchLimitMax: 20,
 			searchLimitDefault: 5
 		}
 	}
