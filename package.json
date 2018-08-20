@@ -34,16 +34,16 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "elasticsearch": "^13.3.1",
+    "elasticsearch": "^15.1.1",
     "joi": "^13.0.0",
     "mono-test-utils": "^1.2.1"
   },
   "devDependencies": {
-    "@terrajs/mono": "0.9.1",
-    "ava": "0.22.0",
-    "codecov": "2.3.1",
-    "eslint": "4.9.0",
-    "nyc": "11.2.1",
+    "mono-core": "1.0.0",
+    "ava": "0.25.0",
+    "codecov": "3.0.4",
+    "eslint": "5.4.0",
+    "nyc": "12.0.2",
     "rimraf": "2.6.2",
     "std-mocks": "1.0.1"
   },
