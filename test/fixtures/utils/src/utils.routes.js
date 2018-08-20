@@ -1,7 +1,7 @@
 const Joi = require('joi')
 const { client, searchValidation, getSearchOptions } = require('../../../..')
 
-const { conf } = require('@terrajs/mono')
+const { conf } = require('mono-core')
 
 module.exports = [
 	{
